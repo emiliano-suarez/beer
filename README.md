@@ -4,7 +4,7 @@ Our beloved beer, site
 ## Requirements
 
 You must have installed these technologies:
-* [PHP]
+* PHP
 * [MongoDb](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ## Install app
@@ -16,6 +16,8 @@ $ cd beer
 $ chmod 777 -R storage
 $ composer install
 $ php artisan cache:clear
+$ cp .env.example .env
+$ php artisan key:generate
 ```
 
 ## Configure virtual host (Apache)
