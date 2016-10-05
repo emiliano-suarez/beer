@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Auth\Authenticatable;
 use Jenssegers\Mongodb\Eloquent\Model as Model;
-use Illuminate\Auth\Passwords\CanResetPassword;
+use App\Http\Controllers\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
