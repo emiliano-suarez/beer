@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Ups! El email o la clave es incorrecto.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'throttle' => 'Mmmm... Demasiados intentos fallidos. Intentá de nuevo en :seconds segundos.',
 
 ];
