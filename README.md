@@ -1,7 +1,7 @@
 # beer
 Our beloved beer, site
 
-# Requirements
+## Requirements
 
 You must have installed these technologies:
 * [PHP]
