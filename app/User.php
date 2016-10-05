@@ -53,6 +53,7 @@ class User
         'password' => 'required|min:6',
     ];
 
+
     /**
      * Get user social account.
      */
