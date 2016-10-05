@@ -1,6 +1,12 @@
 # beer
 Our beloved beer, site
 
+# Requirements
+
+You must have installed these technologies:
+* [PHP]
+* [MongoDb](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+
 ## Install app
 
 ```sh
@@ -17,7 +23,7 @@ $ php artisan cache:clear
 Create this file:
 
 ```sh
-sudo vim /etc/apache2/sites-available/beer.com.conf
+$ sudo vim /etc/apache2/sites-available/beer.com.conf
 ```
 
 And add these lines into it:
@@ -43,14 +49,14 @@ And add these lines into it:
 Enable the new site:
 
 ```sh
-sudo ln -s /etc/apache2/sites-available/beer.com.conf /etc/apache2/sites-enabled/beer.com.conf
-sudo service apache2 restart
+$ sudo ln -s /etc/apache2/sites-available/beer.com.conf /etc/apache2/sites-enabled/beer.com.conf
+$ sudo service apache2 restart
 ```
 
 ## Add local domain in your hosts file (optional)
 
 ```sh
-sudo vim /etc/hosts
+$ sudo vim /etc/hosts
 ```
 
 Add add this line at the end:
