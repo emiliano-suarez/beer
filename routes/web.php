@@ -21,4 +21,12 @@ Route::get('/home', 'HomeController@index');
 Route::get('/review', 'ReviewController@showReviewForm')->middleware('auth');
 Route::post('/review', 'ReviewController@review')->middleware('auth');
 
+Route::get('/bares', 'BarController@showList');
+Route::get('/cervezas', 'BeerController@showList');
+
+Route::get('/fabricacion', function () {
+    return view('manufactoring');
+});
+
+
 // Route::get('/post', 'PageController@postForm')->middleware('auth');

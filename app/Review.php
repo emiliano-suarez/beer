@@ -57,5 +57,39 @@ class Review extends Model
     public $validation = [
         'text' => 'required|min:6|max:255',
     ];
-    
+
+
+    /**
+     * The attributes will be indexed by ElasticSearch
+     *
+     * @var array
+     */
+    //public static $schema;
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+/*
+    protected static function boot()
+    {
+        parent::boot();
+        static::$schema = [
+            'slug',
+            'type',
+            'tags' => function($item) {
+                if ($item->tags) {
+                    return array_pluck($item->tags, 'name');
+                } else {
+                    return $item->tags()->find($item->tag_ids)->pluck('name')->toArray();
+                }
+            },
+        ];
+    }
+
+    'type', 'user_id', 'username', 'reviewed_id', 'reviewed_name',
+    'slug', 'tags', 'published_at', 'text', 'show_in_home',
+    'status'
+*/
 }
