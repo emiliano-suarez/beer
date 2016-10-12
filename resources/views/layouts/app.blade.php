@@ -4,6 +4,7 @@
     <title>{{ config('app.name', 'Nuestra Cerveza') }}</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/base.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -72,11 +73,11 @@
               <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
             @endif
             </div>
-            <li><a href="/"><i class="material-icons">home</i>HOME</a></li>
-            <li><a href="/bares"><i class="material-icons">navigation</i>BARES</a></li>
-            <li><a href="#"><i class="material-icons">star</i>CERVEZAS</a></li>
-            <li><a href='/fabricacion'><i class="material-icons">store</i>FABRICACION</a></li>
-            <li><a href='#'><i class="material-icons">question_answer</i>CONSULTAS</a></li>
+            <li><a href="/"><i class="material-icons green-darken-4">home</i>HOME</a></li>
+            <li><a href="/bares"><i class="material-icons green-darken-4">navigation</i>BARES</a></li>
+            <li><a href="#"><i class="material-icons green-darken-4">star</i>CERVEZAS</a></li>
+            <li><a href='/fabricacion'><i class="material-icons green-darken-4">store</i>FABRICACION</a></li>
+            <li><a href='#'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
             <li><div class="divider"></div></li>
             <!-- Dropdown Trigger -->
             @if (Auth::guest())
