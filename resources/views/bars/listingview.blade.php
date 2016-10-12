@@ -1,13 +1,12 @@
-<tr id="bar-{{ $bar->id }}">
-    <td class="list-elem-thumb">  
-        <a href="/bar/{{ $bar->slug }}">
-            <img src="{{ $bar->photo_url }}" />
-        </a>
-    </td>
-    <td class="list-elem-text">
-        <a href="/bar/{{ $bar->slug }}">{{ $bar->name }}</a>
-    </td>
-    <td class="list-elem-ico">
-        <div class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</div>
-    </td>
-</tr>
+<div class="card hoverable small">
+  <div class="card-image">
+    <img src="{{ $bar->photo_url }}">
+    <span class="card-title">{{ $bar->name }}</span>
+  </div>
+  <div class="card-content">
+    <p>{{ $bar->description }}</p>
+  </div>
+  <div class="card-action">
+    <a href="/bar/{{ $bar->slug }}">{{ $bar->name }}</a>
+  </div>
+</div>
