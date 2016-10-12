@@ -74,8 +74,8 @@
             @endif
             </div>
             <li><a href="/"><i class="material-icons green-darken-4">home</i>HOME</a></li>
-            <li><a href="/bares"><i class="material-icons green-darken-4">navigation</i>BARES</a></li>
-            <li><a href="/cervezas"><i class="material-icons green-darken-4">star</i>CERVEZAS</a></li>
+            <li><a href="/bares"><i class="material-icons green-darken-4">local_bar</i>BARES</a></li>
+            <li><a href="/cervezas"><i class="material-icons green-darken-4">local_drink</i>CERVEZAS</a></li>
             <li><a href='/fabricacion'><i class="material-icons green-darken-4">store</i>FABRICACION</a></li>
             <li><a href='#'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
             <li><div class="divider"></div></li>
