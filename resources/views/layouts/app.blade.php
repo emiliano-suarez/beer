@@ -46,7 +46,7 @@
 
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/bares">BARES</a></li>
-                    <li><a href="#">CERVEZAS</a></li>
+                    <li><a href="/cervezas">CERVEZAS</a></li>
                     <li><a href='/fabricacion'>FABRICACION</a></li>
                     <li><a href='#'>CONSULTAS</a></li>
                     <!-- Dropdown Trigger -->
@@ -74,7 +74,7 @@
             </div>
             <li><a href="/"><i class="material-icons">home</i>HOME</a></li>
             <li><a href="/bares"><i class="material-icons">navigation</i>BARES</a></li>
-            <li><a href="#"><i class="material-icons">star</i>CERVEZAS</a></li>
+            <li><a href="/cervezas"><i class="material-icons">star</i>CERVEZAS</a></li>
             <li><a href='/fabricacion'><i class="material-icons">store</i>FABRICACION</a></li>
             <li><a href='#'><i class="material-icons">question_answer</i>CONSULTAS</a></li>
             <li><div class="divider"></div></li>
