@@ -8,5 +8,7 @@
   </div>
   <div class="card-action">
     <a href="/bar/{{ $bar->slug }}">{{ $bar->name }}</a>
+    <a href='#'><i class="material-icons green-darken-4">comment</i></a>
+    <span align="align-rigth"><a href='#'><i class="material-icons green-darken-4">favorite_border</i></a></span>
   </div>
 </div>
