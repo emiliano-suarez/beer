@@ -60,44 +60,40 @@
                         </li>
                     @endif
                 </ul>
-
-                <ul class="side-nav" id="slide-out">
-                    <div class="userView">
-                      <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" />
-                      <a href="#!user"><img class="circle" src="http://www.wheretotonight.com/melbourne/images/empty_profile.png" /></a>
-                    @if ( ! Auth::guest())
-                      <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
-                      <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
-                    @endif
-                    </div>
-                    <li><a href="/"><i class="material-icons">home</i>HOME</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a href="/bares"><i class="material-icons">navigation</i>BARES</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a href="#"><i class="material-icons">star</i>CERVEZAS</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a href='/fabricacion'><i class="material-icons">store</i>FABRICACION</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a href='#'><i class="material-icons">question_answer</i>CONSULTAS</a></li>
-                    <li><div class="divider"></div></li>
-
-                    <!-- Dropdown Trigger -->
-                    @if (Auth::guest())
-                        <li><a href="/login"><i class="material-icons">power_settings_new</i>INGRESAR</a></li>
-                    @else
-                        <li>
-                            <a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                <i class="material-icons">power_settings_new</i>Salir
-                            </a>
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    @endif
-                </ul>
             </div>
         </nav>
+
+        <ul class="side-nav" id="slide-out">
+            <div class="userView">
+              <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" />
+              <a href="#!user"><img class="circle" src="http://www.wheretotonight.com/melbourne/images/empty_profile.png" /></a>
+            @if ( ! Auth::guest())
+              <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
+              <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
+            @endif
+            </div>
+            <li><a href="/"><i class="material-icons">home</i>HOME</a></li>
+            <li><a href="/bares"><i class="material-icons">navigation</i>BARES</a></li>
+            <li><a href="#"><i class="material-icons">star</i>CERVEZAS</a></li>
+            <li><a href='/fabricacion'><i class="material-icons">store</i>FABRICACION</a></li>
+            <li><a href='#'><i class="material-icons">question_answer</i>CONSULTAS</a></li>
+            <li><div class="divider"></div></li>
+            <!-- Dropdown Trigger -->
+            @if (Auth::guest())
+                <li><a href="/login"><i class="material-icons">power_settings_new</i>INGRESAR</a></li>
+            @else
+                <li>
+                    <a href="{{ url('/logout') }}" onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        <i class="material-icons">power_settings_new</i>Salir
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            @endif
+        </ul>   
+
     </header>
 
     <div class="container">

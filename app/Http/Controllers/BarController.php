@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class BarController extends Controller
 {
+    /* TODO: move this method to another place where other controllers
+     * could reused it.
+    */
     public function showList(Request $request)
     {
         $tags = ($request->tags ? $request->tags : array());
