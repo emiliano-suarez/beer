@@ -1,68 +1,43 @@
-@extends('layouts.app')
+<div class="modal" id="modalLogin">
+    <div class="modal-content">
+        <h5>Ingresar a mi cuenta</h5>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Ingresar a mi cuenta</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+        <form id="loginForm" class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-mail</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Clave</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Mantenerme conectado
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Ingresar
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    No sé mi clave
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+            <div class="row">
+                <div class="input-field col s12 form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input id="email" type="email" class="validate form-control" name="email" value="{{ old('email') }}" required autofocus />
+                    @if ($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                    <label for="email" data-error="wrong" data-success="right">E-mail</label>
                 </div>
             </div>
-        </div>
+
+            <div class="row">
+                <div class="input-field col s12 form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input id="password" type="password" class="validate form-control" name="password" required />
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                    <label for="password">Clave</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="checkbox" class="input-field filled-in" id="filled-in-box"/>
+                <label for="filled-in-box">Mantenerme conectado</label>
+            </div>
+        </form>
     </div>
+    <div class="modal-footer">
+        <a id="btnLoginForm" href="#" class="modal-action waves-effect waves-green btn-flat">Ingresar</a>
+        <a id="btnForgotPassword" href="#" class="modal-action modal-close waves-effect waves-green">No sé mi clave</a>
+    </div>
+
 </div>
-@endsection
