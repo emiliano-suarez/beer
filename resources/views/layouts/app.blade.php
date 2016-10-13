@@ -3,13 +3,14 @@
 <head>
     <title>{{ config('app.name', 'Nuestra Cerveza') }}</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/base.css">
+
+    <link rel="stylesheet" href="{{ elixir('css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/base.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="{{ elixir('js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ elixir('js/materialize.min.js') }}"></script>
+    <script type="text/javascript" src="{{ elixir('js/base.js') }}"></script>
 
     <!-- Scripts -->
     <script>
