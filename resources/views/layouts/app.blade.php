@@ -3,19 +3,22 @@
 <head>
     <title>{{ config('app.name', 'Nuestra Cerveza') }}</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/base.css">
+
+    <link rel="stylesheet" href="{{ elixir('css/materialize.min.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/base.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="{{ elixir('js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ elixir('js/materialize.min.js') }}"></script>
+    <script type="text/javascript" src="{{ elixir('js/base.js') }}"></script>
 
     <!-- Scripts -->
     <script>
+        //<![CDATA[
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
+        //]]>
     </script>
 </head>
 
@@ -52,7 +55,7 @@
                     <li><a href='#'>CONSULTAS</a></li>
                     <!-- Dropdown Trigger -->
                     @if (Auth::guest())
-                        <li><a href="/login">INGRESAR</a></li>
+                        <li><a class="modal-trigger" href="#modalLogin">INGRESAR</a></li>
                     @else
                         <li>
                             <a class="dropdown-button" href="#!" data-activates="dropdown_login">{{ Auth::user()->name }}
@@ -66,7 +69,9 @@
 
         <ul class="side-nav" id="slide-out">
             <div class="userView">
-              <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" />
+              <!-- <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" /> -->
+              <img class="background" src="images/profile_background_original.jpg" />
+
               <a href="#!user"><img class="circle" src="http://www.wheretotonight.com/melbourne/images/empty_profile.png" /></a>
             @if ( ! Auth::guest())
               <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
@@ -81,7 +86,7 @@
             <li><div class="divider"></div></li>
             <!-- Dropdown Trigger -->
             @if (Auth::guest())
-                <li><a href="/login"><i class="material-icons">power_settings_new</i>INGRESAR</a></li>
+                <li><a class="modal-trigger" href="#modalLogin"><i class="material-icons">power_settings_new</i>INGRESAR</a></li>
             @else
                 <li>
                     <a href="{{ url('/logout') }}" onclick="event.preventDefault();
@@ -94,8 +99,11 @@
                 </li>
             @endif
         </ul>   
-
     </header>
+
+    <!-- Login Modal  -->
+   @include('auth.login')
+   @include('auth.passwords.email')
 
     <div class="container">
         @yield('content')

@@ -2,6 +2,6 @@
 
 @section('content')
 
-El contenido va aquí... =)
+El contenido de la home va aquí... =)
 
 @endsection
