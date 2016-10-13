@@ -39,5 +39,8 @@
         <span><a id="btnForgotPassword" href="#" class="modal-action modal-close waves-effect waves-green">No sé mi clave</a></span>
         <a id="btnLoginForm" href="#" class="modal-action waves-effect waves-green btn-flat">Ingresar</a>
     </div>
-
+    <div class="divider"></div>
+    <div class="valign-wrapper modal-footer">
+        <span class="align-right">No tenés cuenta? <a href="{{ url('/register') }}">Registrate gratis!</a></span>
+    </div>
 </div>

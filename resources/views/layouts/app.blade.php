@@ -96,7 +96,7 @@
                     </form>
                 </li>
             @endif
-        </ul>   
+        </ul>
     </header>
 
     <!-- Login Modal  -->
