@@ -35,9 +35,9 @@
             </div>
         </form>
     </div>
-    <div class="modal-footer">
+    <div class="valign-wrapper modal-footer align-right">
+        <span><a id="btnForgotPassword" href="#" class="modal-action modal-close waves-effect waves-green">No sé mi clave</a></span>
         <a id="btnLoginForm" href="#" class="modal-action waves-effect waves-green btn-flat">Ingresar</a>
-        <a id="btnForgotPassword" href="#" class="modal-action modal-close waves-effect waves-green">No sé mi clave</a>
     </div>
 
 </div>

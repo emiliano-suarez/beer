@@ -36,4 +36,18 @@ $(document).ready(function(){
         });
     });
 
+    $("#btnForgotPassword").click(function() {
+        $('#modalForgotPassword').openModal();
+    });
+    
+    $("#btnSendForgotPassEmail").click(function() {
+        $('#forgotPasswordForm').submit();
+        Materialize.toast('Te hemos enviado un email para que puedas generar una nueva clave!', 4000);
+
+        setTimeout(function(){
+            $('#modalForgotPassword').closeModal();
+        }, 4000);
+        
+    });
+
 });

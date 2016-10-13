@@ -68,7 +68,9 @@
 
         <ul class="side-nav" id="slide-out">
             <div class="userView">
-              <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" />
+              <!-- <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" /> -->
+              <img class="background" src="images/profile_background_original.jpg" />
+
               <a href="#!user"><img class="circle" src="http://www.wheretotonight.com/melbourne/images/empty_profile.png" /></a>
             @if ( ! Auth::guest())
               <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
@@ -98,8 +100,9 @@
         </ul>   
     </header>
 
-    <!-- Login Modal Structure -->
+    <!-- Login Modal  -->
    @include('auth.login')
+   @include('auth.passwords.email')
 
     <div class="container">
         @yield('content')
