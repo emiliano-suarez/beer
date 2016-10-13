@@ -69,10 +69,8 @@
 
         <ul class="side-nav" id="slide-out">
             <div class="userView">
-              <!-- <img class="background" src="http://i.telegraph.co.uk/multimedia/archive/01793/ginger-beer_1793863b.jpg" /> -->
-              <img class="background" src="images/profile_background_original.jpg" />
-
-              <a href="#!user"><img class="circle" src="http://www.wheretotonight.com/melbourne/images/empty_profile.png" /></a>
+              <img class="background" src="{{ elixir('images/profile_background_original.jpg') }}" />
+              <a href="#!user"><img class="circle" src="{{ elixir('images/empty_profile.jpg') }}" /></a>
             @if ( ! Auth::guest())
               <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
               <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
