@@ -30,4 +30,13 @@ class BeerController extends Controller
 	        return view('beers.list', [ 'beers' => $beers ]);
 	    }
 
+	public function showBeer($slug)
+	    {
+        
+
+	        $beer = Beer::where('slug', $slug)->get();
+	        return view('beers.detail', [ 'beer' => $beer ]);
+
+	    }    
+
 }
