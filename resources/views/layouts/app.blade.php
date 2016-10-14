@@ -43,29 +43,33 @@
 
         @endif
 
-        <nav>
-            <div class="nav-wrapper">
-                <a href="/" class="brand-logo">Nuestra Cerveza!</a>
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="/bares">BARES</a></li>
-                    <li><a href="/cervezas">CERVEZAS</a></li>
-                    <li><a href='/fabricacion'>FABRICACION</a></li>
-                    <li><a href='#'>CONSULTAS</a></li>
-                    <!-- Dropdown Trigger -->
-                    @if (Auth::guest())
-                        <li><a class="modal-trigger" href="#modalLogin">INGRESAR</a></li>
-                    @else
-                        <li>
-                            <a class="dropdown-button" href="#!" data-activates="dropdown_login">{{ Auth::user()->name }}
-                                <i class="material-icons right">arrow_drop_down</i>
-                            </a>
-                        </li>
-                    @endif
-                </ul>
+        <nav>
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo">Nuestra Cerveza!</a>
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/bares">BARES</a></li>
+                        <li><a href="/cervezas">CERVEZAS</a></li>
+                        <li><a href='/fabricacion'>FABRICACION</a></li>
+                        <li><a href='#'>CONSULTAS</a></li>
+                        <!-- Dropdown Trigger -->
+                        @if (Auth::guest())
+                            <li><a class="modal-trigger" href="#modalLogin">INGRESAR</a></li>
+                        @else
+                            <li>
+                                <a class="dropdown-button" href="#!" data-activates="dropdown_login">{{ Auth::user()->name }}
+                                    <i class="material-icons right">arrow_drop_down</i>
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </nav>
+
 
         <ul class="side-nav" id="slide-out">
             <div class="userView">

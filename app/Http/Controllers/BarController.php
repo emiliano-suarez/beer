@@ -31,4 +31,11 @@ class BarController extends Controller
 
         return view('bars.list', [ 'bars' => $bars ]);
     }
+
+    public function showBar($slug)
+    {
+        $bar = Bar::where('slug', $slug)->first();
+        return view('bars.detail', [ 'bar' => $bar ]);
+    }
+
 }
