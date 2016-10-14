@@ -7,52 +7,41 @@
     <h1>{{ $bar->name }}</h1>
     <div class="row">
         <!-- Basic bar information -->
-        <div class="col s12 m6 s6 grey lighten-1">
-
-
-            <picture>
-              <!-- <source srcset="img_smallflower.jpg" media="(max-width: 400px)"> -->
-              <source srcset="{{ url($bar->photo_url) }}">
-              <img class="scale" src="{{ url($bar->photo_url) }}" alt="{{ $bar->name }}">
-            </picture>
-
-<!--
-            <div class="card large horizontal">
-              <div class="card-image">
-                <img src="">
-              </div>
-              <div class="card-stacked">
+        <div class="col s12 m6 s6">
+            <!-- Bar information -->
+            <div class="card sticky-action">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{ url($bar->photo_url) }}">
+                </div>
                 <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    <span class="card-title activator grey-text text-darken-4">{{ $bar->name }} <i class="material-icons right">more_vert</i></span>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                    <a href='#'><i class="material-icons green-darken-4">comment</i></a>
+                    <a href='#'><i class="material-icons green-darken-4">share</i></a>
+                    <a href='#'><i class="material-icons green-darken-4">favorite_border</i></a>
                 </div>
-              </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ $bar->name }} <i class="material-icons right">close</i></span>
+                    <p>{{ $bar->description }}</p>
+                </div>
             </div>
--->
         </div>
-        <div class="col s12 m6 s6 blue lighten-1">
+
+        <div class="col s12 m6 s6">
             
+            <div class="card">
+                <div class="card-image">
+                    <img class="activator" src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&maptype=roadmap&language=es&markers=color:0x1B5E20|-34.5717947,-58.4313896&key=AIzaSyDFPDR43uGytO7LPEfFLOkLPJIGWUe_5ps">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ $bar->address }}</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="divider"></div>
-
-    <div class="row">
-        <div class="col s12 blue lighten-1"><p class="center-align">s12</p></div>
-    </div>
-    <div class="row">
-        <div class="col s12 m4 l2 teal lighten-1"><p class="center-align">s12 m4</p></div>
-        <div class="col s12 m4 l8 teal lighten-2"><p class="center-align">s12 m4</p></div>
-        <div class="col s12 m4 l2 teal lighten-3"><p class="center-align">s12 m4</p></div>
-    </div>
-    <div class="row">
-        <div class="col s12 m6 l3 purple lighten-3"><p class="center-align">s12 m6 l3</p></div>
-        <div class="col s12 m6 l3 purple lighten-3"><p class="center-align">s12 m6 l3</p></div>
-        <div class="col s12 m6 l3 purple lighten-6"><p class="center-align">s12 m6 l3</p></div>
-        <div class="col s12 m6 l3 purple lighten-7"><p class="center-align">s12 m6 l3</p></div>
-    </div>
 
     @else
         <p class="center-align">No encontramos resultados para tu búsqueda... =(</p>
