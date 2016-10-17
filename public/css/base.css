@@ -9,6 +9,11 @@ img .scale {
     height: auto;
 }
 
+.ilike-grey-container {
+   /* @extend .grey, .lighten-3;*/
+   color:#eeeeee
+
+  }
 
 /*
 .img-item
