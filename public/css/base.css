@@ -15,6 +15,14 @@ img .scale {
 
   }
 
+
+ .parallax-container {
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      box-sizing: inherit;
+    }  
+
 /*
 .img-item
 {
