@@ -9,6 +9,10 @@ img .scale {
     height: auto;
 }
 
+.bar-detail-h1 {
+    font-size: 200%;
+}
+
 .ilike-grey-container {
    /* @extend .grey, .lighten-3;*/
    color:#eeeeee

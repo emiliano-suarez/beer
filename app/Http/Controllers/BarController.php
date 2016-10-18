@@ -38,4 +38,7 @@ class BarController extends Controller
         return view('bars.detail', [ 'bar' => $bar ]);
     }
 
+    public function getNearbyBars($lat, $lng) {
+        
+    }
 }
