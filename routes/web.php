@@ -23,6 +23,7 @@ Route::post('/review', 'ReviewController@review')->middleware('auth');
 
 Route::get('/bares', 'BarController@showList');
 Route::get('/bar/{slug}', 'BarController@showBar');
+Route::get('/bares/cercanos', 'BarController@getNearby');
 
 Route::get('/cervezas', 'BeerController@showList');
 Route::get('/cerveza/{slug}', 'BeerController@showBeer');

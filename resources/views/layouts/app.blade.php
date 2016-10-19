@@ -12,6 +12,7 @@
    <!-- <script type="text/javascript" src="{{ elixir('js/jquery-3.1.1.min.js') }}"></script>-->
     <script type="text/javascript" src="{{ elixir('js/materialize.min.js') }}"></script>
     <script type="text/javascript" src="{{ elixir('js/base.js') }}"></script>
+    <script type="text/javascript" src="{{ elixir('js/map.js') }}"></script>
 
     <!-- Scripts -->
     <script>
