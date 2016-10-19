@@ -73,8 +73,6 @@ function addUserLocationMarker(position) {
         icon: image
     });
     marker.setMap(map);
-
-    // console.log(position);
 }
 
 function showError(error) {

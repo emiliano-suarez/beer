@@ -11,26 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'], function () {
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('/home', 'HomeController@index');
+
+    Auth::routes();
+
+    // Reviews routes
+    Route::get('/review', 'ReviewController@showReviewForm')->middleware('auth');
+    Route::post('/review', 'ReviewController@review')->middleware('auth');
+    // Route::get('/post', 'PageController@postForm')->middleware('auth');
+
+    // Bars routes
+    Route::get('/bares', 'BarController@showList');
+    Route::get('/bar/{slug}', 'BarController@showBar');
+    Route::get('/bares/cercanos', 'BarController@getNearby');
+
+    // Beers routes
+    Route::get('/cervezas', 'BeerController@showList');
+    Route::get('/cerveza/{slug}', 'BeerController@showBeer');
+
+    // Manufactoring routes
+    Route::get('/fabricacion', function () {
+        return view('manufactoring');
+    });
+
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/review', 'ReviewController@showReviewForm')->middleware('auth');
-Route::post('/review', 'ReviewController@review')->middleware('auth');
-
-Route::get('/bares', 'BarController@showList');
-Route::get('/bar/{slug}', 'BarController@showBar');
-Route::get('/bares/cercanos', 'BarController@getNearby');
-
-Route::get('/cervezas', 'BeerController@showList');
-Route::get('/cerveza/{slug}', 'BeerController@showBeer');
-
-Route::get('/fabricacion', function () {
-    return view('manufactoring');
-});
-
-
-// Route::get('/post', 'PageController@postForm')->middleware('auth');
