@@ -40,9 +40,9 @@ class BarController extends Controller
 
     public function getNearby(Request $request) {
 
-        $lat = ($request->lat ? $request->lat : '');
-        $lng = ($request->lng ? $request->lng : '');
-        $radius = ($request->radius ? $request->radius : 1000);
+        $lat = floatval($request->lat ? $request->lat : 0);
+        $lng = floatval($request->lng ? $request->lng : 0);
+        $radius = floatval($request->radius ? $request->radius : 1000);
 /*
         $lat = -34.5769758;
         $lng = -58.4367746;
