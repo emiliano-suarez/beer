@@ -8,5 +8,5 @@ return [
     'maptype' => 'roadmap',
     'language' => 'es',
     'markers-color' => '0x1B5E20',
-    'api_key' => env(GOOGLE_API_KEY, ''),
+    'api_key' => env('GOOGLE_API_KEY', ''),
 ];
