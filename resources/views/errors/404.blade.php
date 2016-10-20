@@ -37,13 +37,11 @@
 </style>
 -->
 
-<div class="container">
-    <div class="content">
-        <div class="title">Ups...<br>La cerveza se esta calentando</div>
-    </div>
-    <div class="card-image">
-      <img class="responsive-img" src="images/broken2.jpg"></div>
-    </div>
+<div class="content">
+    <div class="title">Ups...<br>La cerveza se esta calentando</div>
+</div>
+<div class="card-image">
+  <img class="responsive-img" src="images/broken2.jpg"></div>
 </div>
 
 @endsection
