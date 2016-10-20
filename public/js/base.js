@@ -54,3 +54,13 @@ $(document).ready(function(){
     });
 
 });
+
+function favorite(element) {
+    if ($(element).html() == "favorite_border")
+    {
+            $(element).html("favorite");
+    } else {
+            $(element).html("favorite_border");
+
+    }
+};

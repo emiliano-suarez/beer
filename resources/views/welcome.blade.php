@@ -12,7 +12,7 @@
       <h2 class="header">Eventos Cerveceros</h2>
       <p class="grey-text text-darken-3 lighten-3">Enterate de los proximos eventos cerveceros de Argentina</p>
       <div class="row">
-     	<div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+     	<div class="col s12 m8 l9"> 
        		<div class="card-panel grey lighten-3"> <a target="blank" href="http://www.ensenadabeerfest.com/">Ensenada Beer Fest"</a></div>
      	</div>
       </div>

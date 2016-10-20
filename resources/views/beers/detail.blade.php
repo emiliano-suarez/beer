@@ -22,15 +22,15 @@
     <hr/>
       
       <div class="card-panel">
-         <blockquote>
-                   <p class="flow-text">
-
-          INFO DE LA BIRRA
+        <blockquote>
+          <p class="flow-text">
+            Tipo : {{ $beer[0]->type }}<br>
+            Descripcion : {{ $beer[0]->description }}<br>
+            Densidad : {{ $beer[0]->density }}<br>
+            Sabor: {{ $beer[0]->taste }}<br>
          </blockquote>
-         </p>
+          </p>
       </div>
-    
-      </div>      
    </body>
 </html>
 
