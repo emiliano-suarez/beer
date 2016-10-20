@@ -43,12 +43,74 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
-
     <div class="divider"></div>
+
+    <div class="row">
+        <div class="response">
+            <h4>Comentarios</h4>
+
+            @if ($reviews)
+                @each('reviews.list', $reviews, 'review')
+            @else
+                <p>Se el primero en comentar sobre este lugar!</p>
+            @endif
+
+        </div>
+    </div>
+
+    <div class="coment-form">
+        <h4>Dejá tu comentario</h4>
+
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/review') }}">
+            <input id="reviewed_id" name="reviewed_id" type="hidden" value="{{ $bar->id }}">
+            <input id="reviewed_name" name="reviewed_name" type="hidden" value="{{ $bar->name }}">
+            <input id="reviewed_slug" name="reviewed_slug" type="hidden" value="{{ $bar->slug }}">
+            <input id="type" name="type" type="hidden" value="bar">
+            <input id="tags" name="tags" type="hidden" value="">
+
+            {{ csrf_field() }}
+
+            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                <label for="text" class="col-md-4 control-label">Comentario *</label>
+
+                <div class="col-md-6">
+                    <input id="name" type="text" class="form-control" name="text" value="{{ old('text') }}" required>
+
+                    @if ($errors->has('text'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('text') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                    <button type="submit" class="btn btn-primary">
+                        Publicar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+<!--
+        <form>
+            <input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+            <input type="text" value="Subject " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
+            <input type="text" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
+            <textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Your Comment...</textarea>
+            <input type="submit" value="SUBMIT" >
+        </form>
+-->
+    </div>
 
     @else
         <p class="center-align">No encontramos resultados para tu búsqueda... =(</p>

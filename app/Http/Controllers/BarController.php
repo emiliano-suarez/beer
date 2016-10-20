@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bar;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ReviewController as Review;
 
 class BarController extends Controller
 {
@@ -35,7 +36,14 @@ class BarController extends Controller
     public function showBar($slug)
     {
         $bar = Bar::where('slug', $slug)->first();
-        return view('bars.detail', [ 'bar' => $bar ]);
+
+        // Get the reviews for this bar
+        $reviews = array();
+        if ($bar) {
+            $reviews = Review::getReviews($bar->id);
+        }
+
+        return view('bars.detail', [ 'bar' => $bar, 'reviews' => $reviews ]);
     }
 
     public function getNearby(Request $request) {
