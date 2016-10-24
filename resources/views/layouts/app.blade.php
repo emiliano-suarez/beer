@@ -46,8 +46,10 @@
         @endif
 
 
+              <div class="navbar-fixed">
         <nav>
             <div class="container">
+
                 <div class="nav-wrapper">
                     <a href="/" class="brand-logo">Nuestra Cerveza!</a>
                     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -70,6 +72,8 @@
                     </ul>
                 </div>
             </div>
+                        </div>
+
         </nav>
 
 
