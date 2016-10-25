@@ -25,6 +25,17 @@
 </head>
 
 <body class="yellow lighten-5">
+<!--  Facebook sdk for Javascript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--  Facebook sdk for Javascript -->
+
 
     <header>
         @if ( ! Auth::guest())
@@ -46,10 +57,9 @@
         @endif
 
 
-              <div class="navbar-fixed">
+    <div class="navbar-fixed">
         <nav>
             <div class="container">
-
                 <div class="nav-wrapper">
                     <a href="/" class="brand-logo">Nuestra Cerveza!</a>
                     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -72,10 +82,9 @@
                     </ul>
                 </div>
             </div>
-                        </div>
-
         </nav>
-
+    </div>
+    
 
         <ul class="side-nav" id="slide-out">
             <div class="userView">
@@ -87,7 +96,7 @@
             @endif
             </div>
             <li><a href="/"><i class="material-icons green-darken-4">home</i>HOME</a></li>
-            <li><a href="/bares"><i class="material-icons green-darken-4">local_bar</i>BARES</a></li>
+            <li><a href="/bares"><i class="material-icons green-darken-4">room</i>BARES</a></li>
             <li><a href="/cervezas"><i class="material-icons green-darken-4">local_drink</i>CERVEZAS</a></li>
             <li><a href='/fabricacion'><i class="material-icons green-darken-4">store</i>FABRICACION</a></li>
             <li><a href='#'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
@@ -128,6 +137,17 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
             <ul>
+                <!-- Compartir en facebook  -->
+                <li>
+            <div class="fb-share-button" data-href="http://www.beer-dev.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.beer-dev.com%2F&amp;src=sdkpreparse">Compartir</a></div>
+            </li>
+                <!-- Enviar por Messenger de Facebook -->
+                <li>
+            <div class="fb-send" 
+        data-href="www.beer-dev.com" 
+        data-layout="button_count">
+    </div>    
+</li>
               <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
             </ul>
