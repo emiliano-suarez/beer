@@ -56,7 +56,7 @@
                         <li><a href="/bares">BARES</a></li>
                         <li><a href="/cervezas">CERVEZAS</a></li>
                         <li><a href='/fabricacion'>FABRICACION</a></li>
-                        <li><a href='#'>CONSULTAS</a></li>
+                        <li><a href='/consultas'>CONSULTAS</a></li>
                         <!-- Dropdown Trigger -->
                         @if (Auth::guest())
                             <li><a class="modal-trigger" href="#modalLogin">INGRESAR</a></li>
@@ -72,7 +72,6 @@
             </div>
         </nav>
 
-
         <ul class="side-nav" id="slide-out">
             <div class="userView">
               <img class="background" src="{{ elixir('images/profile_background_original.jpg') }}" />
@@ -86,7 +85,7 @@
             <li><a href="/bares"><i class="material-icons green-darken-4">local_bar</i>BARES</a></li>
             <li><a href="/cervezas"><i class="material-icons green-darken-4">local_drink</i>CERVEZAS</a></li>
             <li><a href='/fabricacion'><i class="material-icons green-darken-4">store</i>FABRICACION</a></li>
-            <li><a href='#'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
+            <li><a href='/consultas'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
             <li><div class="divider"></div></li>
             <!-- Dropdown Trigger -->
             @if (Auth::guest())
