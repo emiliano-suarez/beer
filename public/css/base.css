@@ -95,13 +95,16 @@ figcaption
 .card .card-action .fa, .card .card-action .icon-d, .card .card-action .material-icons {
     font-size: 20px;
     vertical-align: middle;
+    color: #1b5e20;
 }
 
+.text{color: #3d3d3d;}
+/*
 .material-icons {
     text-rendering: optimizeLegibility;
     font-feature-settings: 'liga';
 }
-
+*/
 .panel-heading {
     font-size: 150%;
 }

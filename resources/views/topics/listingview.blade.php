@@ -30,12 +30,11 @@
                 <div class="row">
                     <div class="col s6 left-align">
                         <a href="#modal-login" class="modal-trigger">
-                            <i class="material-icons">favorite_border</i>
-                            <span>{{ $topic->likes_quantity }}</span>
+                            <i class="material-icons green-darken-4">favorite_border</i>
+                            <span class="text">{{ $topic->likes_quantity }}</span>
                         </a>
                         <a href="#" class="comment" data-post="{{ $topic->id }}" data-url="{{ $topic->topic_url }}">
-                            <i class="material-icons">chat_bubble_outline</i>
-                            <span class="count"></span>
+                            <i class="material-icons green-darken-4">chat_bubble_outline</i>
                             <span class="text">Comentar</span>
                         </a>
                     </div>
