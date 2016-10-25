@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dejá tu pregunta o comentario</div>
+                <div class="panel-heading">Agregá tu pregunta!</div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">

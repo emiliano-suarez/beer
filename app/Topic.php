@@ -23,9 +23,9 @@ class Topic extends Model
      * @var array
      */
     protected $fillable = [
-        'type', 'user_id', 'user_name', 'reviewed_id', 'reviewed_name',
-        'reviewed_slug', 'tags', 'published_at', 'subject', 'description',
-        'photo_url', 'video_url', 'show_in_home', 'status', 'reviews_quantity',
+        'type', 'user_id', 'user_name', 'user_photo',
+        'slug', 'tags', 'published_at', 'subject', 'description',
+        'photo_url', 'video_url', 'show_in_home', 'status', 'replies_quantity',
         'likes_quantity'
     ];
 
@@ -48,7 +48,8 @@ class Topic extends Model
         'published_at' => null,
         'show_in_home' => false,
         'status' => 1,
-        'reviews_quantity' => 0,
+        'replies_quantity' => 0,
+        'likes_quantity' => 0,
     ];
 
     /**

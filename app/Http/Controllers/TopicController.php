@@ -62,15 +62,12 @@ class TopicController extends Controller
         $this->validator($formField)->validate();
         $user = $request->user();
 
-        $formField['status'] = 0;
-        $formField['show_in_home'] = 0;
-
         if ($user) {
             $formField['user_id'] = $user->id;
             $formField['user_name'] = $user->name;
         }
 
-        $this->generateSlug($formField['subject']);
+        $formField['slug'] = $this->generateSlug($formField['subject']);
 
         $this->create($formField);
         return back()->with('status', 'Consulta publicada con exito!');
@@ -84,6 +81,11 @@ class TopicController extends Controller
      */
     public function getLastOnes(Request $request) {
         $topics = $this->getByFilter();
+
+        foreach($topics as $topic) {
+            $topic['topic_url'] = '/tema/' . $topic['slug'];
+        }
+
         return view('topics.list', [ 'topics' => $topics ]);
     }
 
@@ -94,8 +96,7 @@ class TopicController extends Controller
     private function generateSlug($subject) {
         $subject = str_replace(" ","-", strtolower($subject));
         $possibleSlug = preg_replace("/[^\-a-z0-9]/","", $subject);
-        $slug = $this->validSlug($possibleSlug);
-        return $slug;
+        return $this->validSlug($possibleSlug);
     }
 
     private function validSlug($possibleSlug) {

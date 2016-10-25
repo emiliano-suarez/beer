@@ -51,10 +51,7 @@ class BarController extends Controller
         $lat = floatval($request->lat ? $request->lat : 0);
         $lng = floatval($request->lng ? $request->lng : 0);
         $radius = floatval($request->radius ? $request->radius : 1000);
-/*
-        $lat = -34.5769758;
-        $lng = -58.4367746;
-*/
+
         $query = array(
                     'location' => array(
                         '$nearSphere' => array(
