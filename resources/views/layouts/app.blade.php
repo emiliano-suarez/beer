@@ -3,7 +3,7 @@
 <head>
     <title>{{ config('app.name', 'Nuestra Cerveza') }}</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ elixir('css/materialize.css') }}">
     <link rel="stylesheet" href="{{ elixir('css/base.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -68,7 +68,7 @@
                         <li><a href="/bares">BARES</a></li>
                         <li><a href="/cervezas">CERVEZAS</a></li>
                         <li><a href='/fabricacion'>FABRICACION</a></li>
-                        <li><a href='#'>CONSULTAS</a></li>
+                        <li><a href='/consultas'>CONSULTAS</a></li>
                         <!-- Dropdown Trigger -->
                         @if (Auth::guest())
                             <li><a class="modal-trigger" href="#modalLogin">INGRESAR</a></li>
@@ -83,8 +83,10 @@
                 </div>
             </div>
         </nav>
+<<<<<<< HEAD
     </div>
     
+
 
         <ul class="side-nav" id="slide-out">
             <div class="userView">
@@ -99,7 +101,7 @@
             <li><a href="/bares"><i class="material-icons green-darken-4">room</i>BARES</a></li>
             <li><a href="/cervezas"><i class="material-icons green-darken-4">local_drink</i>CERVEZAS</a></li>
             <li><a href='/fabricacion'><i class="material-icons green-darken-4">store</i>FABRICACION</a></li>
-            <li><a href='#'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
+            <li><a href='/consultas'><i class="material-icons green-darken-4">question_answer</i>CONSULTAS</a></li>
             <li><div class="divider"></div></li>
             <!-- Dropdown Trigger -->
             @if (Auth::guest())

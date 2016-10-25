@@ -21,8 +21,8 @@ Route::group(['middleware' => 'web'], function () {
     Auth::routes();
 
     // Reviews routes
-    Route::get('/review', 'ReviewController@showReviewForm')->middleware('auth');
-    Route::post('/review', 'ReviewController@review')->middleware('auth');
+    Route::get('/review', 'ReviewController@showReviewForm');
+    Route::post('/review', 'ReviewController@review');
     // Route::get('/post', 'PageController@postForm')->middleware('auth');
 
     // Bars routes
@@ -33,6 +33,10 @@ Route::group(['middleware' => 'web'], function () {
     // Beers routes
     Route::get('/cervezas', 'BeerController@showList');
     Route::get('/cerveza/{slug}', 'BeerController@showBeer');
+
+    // Topics routes
+    Route::get('/consultas', 'TopicController@getLastOnes');
+    Route::post('/topic', 'TopicController@topic')->middleware('auth');
 
     // Manufactoring routes
     Route::get('/fabricacion', function () {

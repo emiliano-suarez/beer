@@ -71,3 +71,40 @@ figcaption
 .margin-1 {
     margin: 1px 1px 1px 1px !important;
 }
+
+.topic-img{width:calc(100% + 40px);margin:15px -20px}
+
+.avatar-img{display:inline-block;vertical-align:middle}
+.avatar-img img{max-width:37px}
+.avatar-img .avatar-name{
+    background-color:#40bf50;width:37px;height:37px;border-radius:50%;display:inline-block;line-height:37px;font-size:18px;font-weight:300;text-align:center;color:#fff;letter-spacing:-
+.28px
+}
+
+.avatar-text{display:inline-block;vertical-align:middle;line-height:18px;margin-left:8px}
+.avatar-text span{font-size:13
+.02px;color:rgba(60,60,60,
+.87);letter-spacing:-
+.3px;position:relative;top:-2px}
+
+.card 
+.card-content p{font-family:Avenir LT Roman Std,sans-serif;opacity:
+.87;font-size:14
+.5px;color:#3d3d3d;letter-spacing:0;line-height:23px;word-break:break-all}
+
+.card .card-action .fa, .card .card-action .icon-d, .card .card-action .material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+    color: #1b5e20;
+}
+
+.text{color: #3d3d3d;}
+/*
+.material-icons {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga';
+}
+*/
+.panel-heading {
+    font-size: 150%;
+}
