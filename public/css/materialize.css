@@ -2832,15 +2832,10 @@ video.responsive-video {
 
 
 .parallax-container {
-   min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
+  position: relative;
+  overflow: hidden;
+  height: 500px;
 }
-
-.parallax-container .section {
-    width: 100%;
-  }
 
 .parallax {
   position: absolute;
@@ -3446,6 +3441,8 @@ input[type=range] + .thumb {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
+
+
 
 .section {
   padding-top: 1rem;
