@@ -83,7 +83,6 @@
                 </div>
             </div>
         </nav>
-<<<<<<< HEAD
     </div>
     
 
@@ -150,7 +149,7 @@
         data-layout="button_count">
     </div>    
 </li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+             
               <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
             </ul>
           </div>
