@@ -37,6 +37,14 @@ class BarController extends Controller
     {
         $bar = Bar::where('slug', $slug)->first();
 
+        $bar['reviewed_type'] = 'bar';
+
+        if ( isset($bar['tags']) ) {
+            if ( is_array($bar['tags']) ) {
+                $bar['tags'] = implode(",", $bar['tags']);
+            }
+        }
+
         // Get the reviews for this bar
         $reviews = array();
         if ($bar) {

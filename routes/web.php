@@ -37,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
     // Topics routes
     Route::get('/consultas', 'TopicController@getLastOnes');
     Route::post('/topic', 'TopicController@topic')->middleware('auth');
+    Route::get('/tema/{slug}', 'TopicController@showTopic');
 
     // Manufactoring routes
     Route::get('/fabricacion', function () {
