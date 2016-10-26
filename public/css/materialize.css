@@ -2830,11 +2830,17 @@ video.responsive-video {
   color: #fff;
 }
 
+
 .parallax-container {
-  position: relative;
-  overflow: hidden;
-  height: 500px;
+   min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
 }
+
+.parallax-container .section {
+    width: 100%;
+  }
 
 .parallax {
   position: absolute;
@@ -2882,6 +2888,16 @@ ul.staggered-list li {
 /*********************
   Media Query Classes
 **********************/
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
 @media only screen and (max-width: 600px) {
   .hide-on-small-only, .hide-on-small-and-down {
     display: none !important;
