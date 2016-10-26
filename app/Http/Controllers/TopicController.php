@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Topic;
+use App\Helper;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,9 @@ class TopicController extends Controller
             $formField['user_name'] = $user->name;
         }
 
-        $formField['slug'] = $this->generateSlug($formField['subject']);
+        $modelName = Topic::getClassName();
+        $helper = new Helper();
+        $formField['slug'] = $helper->generateSlug($formField['subject'], $modelName);
 
         $this->create($formField);
         return back()->with('status', 'Consulta publicada con exito!');
@@ -91,31 +94,5 @@ class TopicController extends Controller
 
     public function getByFilter() {
         return Topic::all();
-    }
-
-    private function generateSlug($subject) {
-        $subject = str_replace(" ","-", strtolower($subject));
-        $possibleSlug = preg_replace("/[^\-a-z0-9]/","", $subject);
-        return $this->validSlug($possibleSlug);
-    }
-
-    private function validSlug($possibleSlug) {
-        $originalSlug = $possibleSlug;
-        // Check if the are a document with this possible slug
-        while ( $topic = Topic::where('slug', $possibleSlug)->first() ) {
-            $possibleSlug = $originalSlug . '-' . $this->generateRandomString();
-        }
-        return $possibleSlug;
-    }
-
-    // TODO: Move this function to a helper controller
-    private function generateRandomString($length = 2) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
     }
 }
