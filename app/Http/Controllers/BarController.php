@@ -76,4 +76,5 @@ class BarController extends Controller
         $results = Bar::where($query)->get()->all();
         return $results;
     }
+
 }

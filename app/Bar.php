@@ -53,4 +53,12 @@ class Bar extends Model
 // https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x250&maptype=roadmap&language=es&markers=color:0x1B5E20|-34.5717947,-58.4313896&key=AIzaSyDFPDR43uGytO7LPEfFLOkLPJIGWUe_5ps
         
     }
+
+    public static function getClassName() {
+        return get_class();
+    }
+
+    public static function incrementReviewsCounter($id) {
+        return Bar::where('_id', $id)->increment('replies_quantity');
+    }
 }

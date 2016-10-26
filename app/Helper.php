@@ -79,4 +79,25 @@ class Helper extends Model
 
         return $string;
     }
+
+    public function increaseReviewCounter($elementId, $elementType) {
+        $model = "";
+        switch ($elementType) {
+            case 'bar':
+                $model = "App\Bar";
+                break;
+
+            case 'beer':
+                $model = "App\Beer";
+                break;
+
+            case 'topic':
+                $model = "App\Topic";
+                break;
+        }
+
+        if ($model) {
+            $model::incrementReviewsCounter($elementId);
+        }
+    }
 }

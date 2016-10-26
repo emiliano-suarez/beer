@@ -64,4 +64,8 @@ class Topic extends Model
     public static function getClassName() {
         return get_class();
     }
+
+    public static function incrementReviewsCounter($id) {
+        return Topic::where('_id', $id)->increment('replies_quantity');
+    }
 }
