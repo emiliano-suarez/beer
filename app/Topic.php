@@ -61,4 +61,7 @@ class Topic extends Model
         'text' => 'required|min:6|max:255',
     ];
 
+    public static function getClassName() {
+        return get_class();
+    }
 }

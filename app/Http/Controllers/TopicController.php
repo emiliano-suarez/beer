@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Topic;
+use App\Helper;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,9 @@ class TopicController extends Controller
             $formField['user_name'] = $user->name;
         }
 
-        $formField['slug'] = $this->generateSlug($formField['subject']);
+        $modelName = Topic::getClassName();
+        $helper = new Helper();
+        $formField['slug'] = $helper->generateSlug($formField['subject'], $modelName);
 
         $this->create($formField);
         return back()->with('status', 'Consulta publicada con exito!');
@@ -91,77 +94,5 @@ class TopicController extends Controller
 
     public function getByFilter() {
         return Topic::all();
-    }
-
-    private function generateSlug($subject) {
-        $subject = strtolower($subject);
-        $subject = $this->replaceLatinCharacters($subject);
-        // Remove all characters but 'spaces', ñ, letters and numbers
-        $subject = preg_replace("/[^\ ña-z0-9]/", "", $subject);
-        $possibleSlug = str_replace(" ","-", trim($subject));
-        return $this->validatedSlug($possibleSlug);
-    }
-
-    private function validatedSlug($possibleSlug) {
-        $originalSlug = $possibleSlug;
-        // Check if the are a document with this possible slug
-        while ( $topic = Topic::where('slug', $possibleSlug)->first() ) {
-            $possibleSlug = $originalSlug . '-' . $this->generateRandomString();
-        }
-        return $possibleSlug;
-    }
-
-    // TODO: Move this function to a helper controller
-    private function generateRandomString($length = 2) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
-    }
-
-    // TODO: Move this function to a helper controller
-    private function replaceLatinCharacters($string) {
-        $string = trim($string);
-     
-        $string = str_replace(
-            array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
-            array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
-            $string
-        );
-     
-        $string = str_replace(
-            array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
-            array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
-            $string
-        );
-     
-        $string = str_replace(
-            array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
-            array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
-            $string
-        );
-     
-        $string = str_replace(
-            array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
-            array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
-            $string
-        );
-     
-        $string = str_replace(
-            array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
-            array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
-            $string
-        );
-     
-        $string = str_replace(
-            array('ñ', 'Ñ', 'ç', 'Ç'),
-            array('n', 'N', 'c', 'C',),
-            $string
-        );
-
-        return $string;
     }
 }
