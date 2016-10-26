@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\Helper;
 use Validator;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Auth;
@@ -73,6 +74,7 @@ class ReviewController extends Controller
         }
 
         $this->create($formField);
+        $this->increaseCounter($formField['reviewed_id'], $formField['reviewed_type']);
         return back()->with('status', 'Review publicada con exito!');
 
     }
@@ -88,4 +90,8 @@ class ReviewController extends Controller
         return $reviews;
     }
 
+    private function increaseCounter($elementId, $elementType) {
+        $helper = new Helper();
+        $helper->increaseReviewCounter($elementId, $elementType);
+    }
 }

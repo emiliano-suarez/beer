@@ -6,6 +6,7 @@ use App\Topic;
 use App\Helper;
 use Validator;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ReviewController as Review;
 
 class TopicController extends Controller
 {
@@ -94,5 +95,27 @@ class TopicController extends Controller
 
     public function getByFilter() {
         return Topic::all();
+    }
+
+    public function showTopic($slug)
+    {
+        $topic = Topic::where('slug', $slug)->first();
+
+        $topic['name'] = $topic['subject'];
+        $topic['reviewed_type'] = 'topic';
+
+        if ( isset($topic['tags']) ) {
+            if ( is_array($topic['tags']) ) {
+                $topic['tags'] = implode(",", $topic['tags']);
+            }
+        }
+
+        // Get the reviews for this bar
+        $reviews = array();
+        if ($topic) {
+            $reviews = Review::getReviews($topic->id);
+        }
+
+        return view('topics.detail', [ 'topic' => $topic, 'reviews' => $reviews ]);
     }
 }
