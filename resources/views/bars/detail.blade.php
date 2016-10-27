@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
+
       
     <h1 class="bar-detail-h1">{{ $bar->name }}</h1>
     <div class="row">
@@ -59,5 +61,5 @@
     </div>
 
     @include('reviews.form', ['object' => $bar ])
-
+</div>>
 @endsection

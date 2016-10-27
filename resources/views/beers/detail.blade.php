@@ -7,7 +7,8 @@
     
    </head>
    @section('content')
-      <title>The Materialize Typography Example</title>
+        <div class="container">
+  <title>The Materialize Typography Example</title>
       
    <body class="container"> 
      @if ($beer)
@@ -34,5 +35,6 @@
    </body>
 </html>
 
-
+</blockquote>
+</div>>
 @endsection

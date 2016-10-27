@@ -61,7 +61,7 @@
         <nav>
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="/" class="brand-logo">Nuestra Cerveza!</a>
+                    <a href="/" class="brand-logo">LOGO</a>
                     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">
@@ -123,9 +123,7 @@
    @include('auth.login')
    @include('auth.passwords.email')
 
-    <div class="container">
-        @yield('content')
-    </div>
+    @yield('content')
 
     <!-- footer -->
     <footer class="page-footer">

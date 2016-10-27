@@ -1,22 +1,21 @@
 @extends('layouts.app')
 @section('content')
 
-  <div id="index-banner" class="parallax-container">
-
+<div id="index-banner" class="parallax-container">
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
-              <h1 class="header center teal-text text-lighten-2">Eventos</h1>
-
-        <div class="row center">
-          <h5 class="header col s12 brown-text">Unite a la comunidad cervecera en cada evento</h5>
-        </div>
+        <a href="http://www.beer-dev.com/bares" class="center brown-text">
+        <h1 class="header center teal-text text-lighten-2">Bares</h1></a>>
+         <div class="row center">
+          <h5 class="header col s12 brown-text">Unite a la comunidad cervecera</h5>
+         </div>
       </div>
     </div>
     <div class="parallax"><img src="images/dos.jpg" alt="Unsplashed background img 1"></div>
   </div>
-    </div>
-
+</div>
+  
 
 
 
@@ -33,6 +32,7 @@
             </a> 
             <p class="light">Encontra los mejores bares cerca de donde estas. </p>
             <p class="light">No te pierdas las experiencias cerveceras de Argentina</p>
+
           </div>
         </div>
 
@@ -65,7 +65,10 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-<h1 class="header center teal-text text-lighten-2">Cervezas</h1>        </div>
+          <a href="http://www.beer-dev.com/cervezas" class="center brown-text">
+            <h1 class="header center teal-text text-lighten-2">Cervezas</h1> 
+          </div></a>
+
       </div>
     </div>
     <div class="parallax"><img src="images/tres.jpg" alt="Unsplashed background img 2"></div>
@@ -94,11 +97,11 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
-                    <h1 class="header center teal-text text-lighten-2">Elaboracion</h1>
+                   <div class="row center">
+          <a href="http://www.beer-dev.com/fabricacion" class="center brown-text">
+            <h1 class="header center teal-text text-lighten-2">Elaboracion</h1> 
+          </div></a>
 
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
       </div>
     </div>
     <div class="parallax"><img src="images/fabrica.jpg" alt="Unsplashed background img 3"></div>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
 
     <div>
         <a class="waves-effect waves-light btn" href="javascript:getLocation();">Mostrar bares cercanos a mí</a>
@@ -15,4 +16,5 @@
         <p>No encontramos resultados para tu búsqueda... =(</p>
     @endif
 
+</div>
 @endsection
