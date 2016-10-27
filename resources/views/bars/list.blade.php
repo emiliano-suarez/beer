@@ -4,10 +4,8 @@
 <div class="container">
 
     <div class="row">
-
         <h1 class="bar-detail-h1">Bares & Patios Cerveceros</h1>
-
-        <div>
+        <div id="nearbyBarsInfo">
             <span><a class="waves-effect waves-light" href="javascript:getLocation();">Quiero ver lugares cercanos</a></span>
         </div>
         <div id="nearbyBarsMap"></div>
