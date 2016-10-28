@@ -27,7 +27,7 @@
         </div>
          <div class="col s12 m4 l3">
             <p>Quiero publicidades de Google</p>
-            <img class="responsive-img" src="images/google.jpg" alt="Unsplashed background img 1">
+            
         </div>
     
     </div>
