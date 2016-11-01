@@ -18,6 +18,9 @@ Route::group(['middleware' => 'web'], function () {
     });
     Route::get('/home', 'HomeController@index');
 
+    // Facebook login
+    Route::get('/login/facebook', 'UserController@facebookLogin');
+
     Auth::routes();
 
     // Reviews routes
