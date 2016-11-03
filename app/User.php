@@ -83,11 +83,12 @@ class User
     }
 
     public function updateSocialAccount($user, $providerInfo, $provider) {
-
         $socialInfo = $user->social;
         $socialInfo[$provider] = $providerInfo;
 
         $user->social = $socialInfo;
+        // Also, the email account is valid (confirmed)
+        $user->status = 1;
 
         $user->save();
         return $user;

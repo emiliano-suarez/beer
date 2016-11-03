@@ -45,7 +45,7 @@ class SocialAccountService
 
     private function associateSocialAccount($user, $socialUser, $provider) {
         // Check if the user has a social account associated
-        if ( ! isset($user->social->$provider)) {
+        if ( ! isset($user->social[$provider])) {
             // The user does not have this social account associated. Let's do it!
             $socialInfo = array();
             foreach ($socialUser as $key => $value) {
