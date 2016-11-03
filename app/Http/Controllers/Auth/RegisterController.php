@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -66,6 +66,34 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'confirmation_token' => $data['confirmation_token'],
         ]);
+    }
+
+    /**
+     * Confirm a user's email address.
+     *
+     * @param  string $token
+     * @return mixed
+     */
+    public function confirmEmail($confirmationToken) {
+        if ( ! $confirmationToken) {
+            // throw new InvalidConfirmationCodeException;
+        }
+
+        $user = User::where('confirmation_token', $confirmationToken)->first();
+
+        if ( ! $user) {
+            // throw new InvalidConfirmationCodeException;
+        }
+
+        $user->status = 1;
+        $user->confirmation_token = null;
+        $user->save();
+
+        $this->guard()->login($user);
+        // Flash::message('You have successfully verified your account.');
+
+        return redirect($this->redirectPath());
     }
 }

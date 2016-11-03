@@ -23,7 +23,7 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
-        'type', 'user_id', 'user_name', 'reviewed_id', 'reviewed_name',
+        'type', 'user_id', 'user_name', 'user_photo', 'reviewed_id', 'reviewed_name',
         'reviewed_slug', 'tags', 'published_at', 'text', 'show_in_home',
         'status', 'reviewed_type'
     ];

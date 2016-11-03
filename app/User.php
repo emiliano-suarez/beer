@@ -30,7 +30,27 @@ class User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'profile_photo', 'status',
+        'social', 'confirmation_token',
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'status' => 'integer',
+    ];
+
+    /**
+     * The default attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'status' => 0,
+        'social' => [],
     ];
 
     /**
@@ -53,14 +73,26 @@ class User
         'password' => 'required|min:6',
     ];
 
-
-    /**
-     * Get user social account.
-     */
-/*
-    public function socialAccount()
-    {
-        return $this->hasOne(SocialAccount::class);
+    public static function setBasicInfoFromSocialAccount($socialUser) {
+        return array(
+            'name' => $socialUser['first_name'],
+            'email' => $socialUser['email'],
+            'profile_photo' => $socialUser['profile_photo'],
+        );
     }
-*/
+
+    public function updateSocialAccount($user, $providerInfo, $provider) {
+        $socialInfo = $user->social;
+        $socialInfo[$provider] = $providerInfo;
+
+        $user->social = $socialInfo;
+        // Also, the email account is valid (confirmed)
+        $user->status = 1;
+        if ( ! isset($user->profile_photo)) {
+            $user->profile_photo = $providerInfo['profile_photo'];
+        }
+
+        $user->save();
+        return $user;
+    }
 }

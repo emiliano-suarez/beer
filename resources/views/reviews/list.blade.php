@@ -1,7 +1,11 @@
 <div class="media response-info">
     <div class="media-left response-text-left">
         <a href="#">
-            <img class="media-object" src="{{ url('images/icon1.png') }}" alt=""/>
+            @if ( $review->user_photo )
+                <img class="media-object" height="64" width="64" src="{{ $review->user_photo }}" alt=""/>
+            @else
+                <img class="media-object" height="64" width="64" src="{{ url('images/icon1.png') }}" alt=""/>
+            @endif
         </a>
         <h5><a href="#">{{ $review->user_name }}</a></h5>
     </div>

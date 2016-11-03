@@ -3,7 +3,9 @@
 <head>
     <title>{{ config('app.name', 'Nuestra Cerveza') }}</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{{ elixir('css/materialize.css') }}">
     <link rel="stylesheet" href="{{ elixir('css/base.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -71,7 +73,7 @@
                         <li><a href='/consultas'>CONSULTAS</a></li>
                         <!-- Dropdown Trigger -->
                         @if (Auth::guest())
-                            <li><a class="modal-trigger" href="#modalLogin">INGRESAR</a></li>
+                            <li><a href="#modalLogin" class="modal-trigger">INGRESAR</a></li>
                         @else
                             <li>
                                 <a class="dropdown-button" href="#!" data-activates="dropdown_login">{{ Auth::user()->name }}
@@ -85,13 +87,11 @@
         </nav>
     </div>
     
-
-
         <ul class="side-nav" id="slide-out">
             <div class="userView">
               <img class="background" src="{{ elixir('images/profile_background_original.jpg') }}" />
-              <a href="#!user"><img class="circle" src="{{ elixir('images/empty_profile.jpg') }}" /></a>
             @if ( ! Auth::guest())
+              <a href="#!user"><img class="circle" src="{{ Auth::user()->profile_photo ? Auth::user()->profile_photo : 'images/empty_profile.jpg' }}" /></a>
               <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
               <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
             @endif
@@ -120,7 +120,7 @@
     </header>
 
     <!-- Login Modal  -->
-   @include('auth.login')
+   @include('modals.login')
    @include('auth.passwords.email')
 
     @yield('content')
