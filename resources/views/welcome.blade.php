@@ -6,17 +6,16 @@
     <div class="section no-pad-bot">
       <div class="container">
         <a href="http://www.beer-dev.com/bares" class="center brown-text">
-        <h1 class="header center teal-text text-lighten-2">Bares</h1></a>>
+        <h1 class="header center teal-text text-lighten-2">Bares</h1></a>
          <div class="row center">
           <h5 class="header col s12 brown-text">Unite a la comunidad cervecera</h5>
          </div>
       </div>
     </div>
-    <div class="parallax"><img src="images/dos.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img class="responsive-img"src="images/party10.jpg" alt="Unsplashed background img 1"></div>
   </div>
 </div>
   
-
 
 
   <div class="container">
@@ -71,7 +70,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="images/tres.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="images/beer1.jpeg" alt="Unsplashed background img 2"></div>
   </div>
 
 
@@ -104,7 +103,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="images/fabrica.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="images/manufactured2.jpg" alt="Unsplashed background img 3"></div>
   </div>
  <!-- 
       <div class="parallax"><img src="images/test9.jpg"></div>

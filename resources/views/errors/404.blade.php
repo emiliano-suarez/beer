@@ -37,11 +37,12 @@
 </style>
 -->
 
-<div class="content">
-    <div class="title">Ups...<br>La cerveza se esta calentando</div>
-</div>
+        <div class="col s12 m8 l9 center"> <h3><i class="mdi-content-send brown-text"></i></h3>
+          <a href = "http://www.beer-dev.com/"><h5 class="center brown-text">Ups... La cerveza se esta calentando. Volver a la home</h5></a>
+
+
 <div class="card-image">
-  <img class="responsive-img" src="images/broken2.jpg"></div>
+  <img class="responsive-img" src="images/404.jpeg"></div>
 </div>
 
 @endsection

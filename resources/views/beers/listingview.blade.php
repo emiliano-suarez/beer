@@ -1,3 +1,27 @@
+
+<div class="col s12 m6 ">
+        <div class="card hoverable">
+
+    <div class="card horizontal">
+
+      <div class="card-image">
+        <img src=images/pilsen.jpg>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+            <p>{{ $beer->type }}</p>
+        </div>
+        <div class="card-action">
+            <a href="/cerveza/{{ $beer->slug }}">{{ $beer->name }}</a>
+            <a href='#'><i class="material-icons green-darken-4">comment</i></a>
+        </div>
+      </div>
+    </div>
+        </div>
+
+  </div>
+
+<!--
 <div class="col s12 m6 l3">
     <div class="card hoverable small">
         <div class="card-image">
