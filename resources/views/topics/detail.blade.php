@@ -9,7 +9,7 @@
                     <div class="card-avatar">
                         <div class="avatar-img">
                             @if ( $topic->user_photo )
-                                <span class="avatar-name">{{ $topic->user_photo }}</span>
+                                <img class="circle" src="{{ $topic->user_photo }}" />
                             @else
                                 <img class="circle" src="{{ elixir('images/empty_profile.jpg') }}" />
                             @endif

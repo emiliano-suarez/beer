@@ -5,7 +5,6 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
 
     <link rel="stylesheet" href="{{ elixir('css/materialize.css') }}">
     <link rel="stylesheet" href="{{ elixir('css/base.css') }}">
@@ -92,7 +91,7 @@
             <div class="userView">
               <img class="background" src="{{ elixir('images/profile_background_original.jpg') }}" />
             @if ( ! Auth::guest())
-              <a href="#!user"><img class="circle" src="{{ Auth::user()->profile_photo }}" /></a>
+              <a href="#!user"><img class="circle" src="{{ Auth::user()->profile_photo ? Auth::user()->profile_photo : 'images/empty_profile.jpg' }}" /></a>
               <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
               <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
             @endif

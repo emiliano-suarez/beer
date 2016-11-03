@@ -67,6 +67,9 @@ class TopicController extends Controller
         if ($user) {
             $formField['user_id'] = $user->id;
             $formField['user_name'] = $user->name;
+            if (isset($user->profile_photo)) {
+                $formField['user_photo'] = $user->profile_photo;
+            }
         }
 
         $modelName = Topic::getClassName();

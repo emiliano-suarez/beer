@@ -51,7 +51,6 @@ class User
     protected $attributes = [
         'status' => 0,
         'social' => [],
-        'profile_photo' => 'images/empty_profile.jpg',
     ];
 
     /**
@@ -89,6 +88,9 @@ class User
         $user->social = $socialInfo;
         // Also, the email account is valid (confirmed)
         $user->status = 1;
+        if ( ! isset($user->profile_photo)) {
+            $user->profile_photo = $providerInfo['profile_photo'];
+        }
 
         $user->save();
         return $user;
