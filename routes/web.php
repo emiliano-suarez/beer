@@ -22,7 +22,13 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/login/facebook', 'UserController@facebookLogin');
 
     Auth::routes();
-
+    Route::get('register/confirm/{token}', 'Auth\RegisterController@confirmEmail');
+/*
+    Route::get('register/confirm/{token}', [
+        'as' => 'confirmation_path',
+        'uses' => 'RegisterController@confirmEmail'
+    ]);
+*/
     // Reviews routes
     Route::get('/review', 'ReviewController@showReviewForm');
     Route::post('/review', 'ReviewController@review');

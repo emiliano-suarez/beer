@@ -34,7 +34,7 @@ class SocialAccountService
             );
 
             $userData = User::setBasicInfoFromSocialAccount($socialUser);
-            $userData['status'] = true;
+            $userData['status'] = 1;
             $userData['social'] = array($provider => $providerInfo);
 
             $user = User::create($userData);

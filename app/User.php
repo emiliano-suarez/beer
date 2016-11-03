@@ -30,7 +30,8 @@ class User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profile_photo', 'status', 'social',
+        'name', 'email', 'password', 'profile_photo', 'status',
+        'social', 'confirmation_token',
     ];
 
     /**
@@ -91,5 +92,4 @@ class User
         $user->save();
         return $user;
     }
-
 }
